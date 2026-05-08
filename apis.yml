@@ -1,0 +1,29 @@
+aid: framer
+url: https://raw.githubusercontent.com/api-evangelist/framer/refs/heads/main/apis.yml
+name: Framer
+x-type: company
+description: >-
+  Framer is a design tool and CMS for shipping production websites without code. The Framer Plugin API and CMS API expose components, content models, and project metadata for integrations.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Productivity
+  - Design
+  - No-Code
+  - Web Design
+  - SaaS
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.framer.com/
+  - type: Plans
+    url: plans/framer-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/framer-rate-limits.yml
+  - type: FinOps
+    url: finops/framer-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
