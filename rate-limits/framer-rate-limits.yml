@@ -15,22 +15,47 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for Framer. Replace with real limits once the pipeline
-  researches the provider's rate-limit documentation.
-notes: Initial scaffold — limits have not yet been reconciled against the provider's documentation.
+description: Framer's developer surface is in-editor (Plugin API, Code Components, Code
+  Overrides, Fetch), so there is no public REST API with documented per-second rate
+  ceilings. The user-facing constraints are plan-level quotas (CMS collections, pages,
+  bandwidth) and add-on per-editor limits.
+notes: For Fetch endpoints that the developer hosts, the rate limit is set by the
+  developer's own service. For form-webhook delivery, retries follow Framer's internal
+  backoff schedule.
 sources:
-- https://www.framer.com/
+- https://www.framer.com/developers/
+- https://www.framer.com/pricing/
 responseCodes:
   throttled: 429
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: CMS Collections (Plan-Level)
+  scope: site
+  metric: collection
+  limit: tier-dependent
+  notes: Free 10, Basic 1, Pro 10, Scale 20, Enterprise custom.
+- name: Pages (Plan-Level)
+  scope: site
+  metric: page
+  limit: tier-dependent
+  notes: Free 1000, Basic 30, Pro 150, Scale 300, Enterprise custom.
+- name: Bandwidth (Plan-Level)
+  scope: site
+  metric: gigabyte
+  limit: tier-dependent
+  timeFrame: monthly
+  notes: Basic 10 GB, Pro 100 GB, Scale 200 GB, Enterprise custom.
+- name: Plugin Sandbox
+  scope: editor
+  metric: api_call
+  limit: not published
+  notes: Plugin API runs sandboxed inside the Framer editor; not a remote rate ceiling.
 policies:
-- name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+- name: Backoff in Fetch
+  description: Endpoints exposed via Framer Fetch should implement their own rate-limiting
+    and return Retry-After when needed.
+- name: Cache Plugin Calls
+  description: Plugins should cache results client-side rather than re-querying CMS data on
+    every render.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

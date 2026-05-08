@@ -5,7 +5,7 @@ provider: Framer
 providerId: framer
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Productivity
 - Design
@@ -13,30 +13,234 @@ tags:
 - Web Design
 - SaaS
 - Plans
-description: Placeholder plans/pricing artifact for Framer. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled against the provider's documentation.
+description: Framer plans reconciled against the public Framer pricing page. Framer
+  prices each site separately rather than per editor; additional editors are billed as a
+  per-editor add-on. Plugin API, Code Components, Code Overrides, and Fetch are available
+  cross-tier without an additional fee.
 sources:
-- https://www.framer.com/
+- https://www.framer.com/pricing/
+- https://www.framer.com/developers/
 plans:
-- id: framer-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers (Free / Pro / Enterprise / pay-as-you-go,
-    etc.) once pricing is reconciled.
+- id: framer-free
+  name: Free
+  type: free
+  description: Free tier on the framer.website subdomain. No custom domain.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Per-Site
+    name: site_price
     type: flat
-    metric: varies
+    metric: site
     limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: CMS Collections
+    name: cms_collections
+    type: flat
+    metric: collection
+    limit: 10
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://www.framer.com/
+    price: 0
+    userMultiplied: false
+  - label: Pages
+    name: pages
+    type: flat
+    metric: page
+    limit: 1000
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
     userMultiplied: false
   elements:
-  - name: Pending Reconciliation
+  - name: framer.website Subdomain Only
+- id: framer-basic
+  name: Basic
+  type: paid
+  description: Per-site plan for personal sites with custom domain.
+  entries:
+  - label: Per-Site Monthly
+    name: site_monthly
+    type: flat
+    metric: site
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 10
+    userMultiplied: false
+  - label: Site Pages
+    name: site_pages
+    type: flat
+    metric: page
+    limit: 30
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: CMS Collections
+    name: cms_collections
+    type: flat
+    metric: collection
+    limit: 1
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: Bandwidth
+    name: bandwidth
+    type: usage
+    metric: gigabyte
+    limit: 10
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  elements:
+  - name: Custom Domain
+  - name: Free .com Domain (Yearly Billing)
+- id: framer-pro
+  name: Pro
+  type: paid
+  description: Per-site plan for growing professional sites.
+  entries:
+  - label: Per-Site Monthly
+    name: site_monthly
+    type: flat
+    metric: site
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 30
+    userMultiplied: false
+  - label: Site Pages
+    name: site_pages
+    type: flat
+    metric: page
+    limit: 150
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: CMS Collections
+    name: cms_collections
+    type: flat
+    metric: collection
+    limit: 10
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: Bandwidth
+    name: bandwidth
+    type: usage
+    metric: gigabyte
+    limit: 100
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  elements:
+  - name: Staging Environment
+  - name: Roles and Permissions
+  - name: Relational CMS
+- id: framer-scale
+  name: Scale
+  type: paid
+  description: Per-site plan for advanced, high-traffic sites. Annual billing only.
+  entries:
+  - label: Per-Site Monthly
+    name: site_monthly
+    type: flat
+    metric: site
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 100
+    userMultiplied: false
+  - label: Site Pages
+    name: site_pages
+    type: flat
+    metric: page
+    limit: 300
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: CMS Collections
+    name: cms_collections
+    type: flat
+    metric: collection
+    limit: 20
+    timeFrame: usage
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  - label: Bandwidth
+    name: bandwidth
+    type: usage
+    metric: gigabyte
+    limit: 200
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+  elements:
+  - name: Priority Support
+  - name: Premium CDN
+  - name: Flexible Limits
+- id: framer-enterprise
+  name: Enterprise
+  type: enterprise
+  description: For teams that need custom limits, enterprise security, and dedicated support.
+  entries:
+  - label: Per-Site Subscription
+    name: site_price
+    type: flat
+    metric: site
+    limit: -1
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+  elements:
+  - name: Custom Limits
+  - name: Enterprise Security
+  - name: Dedicated Support
+- id: framer-extra-editors
+  name: Extra Editors Add-On
+  type: paid
+  description: Per-editor add-on for additional collaborators beyond the seat included in
+    the base plan.
+  entries:
+  - label: Extra Editor Monthly
+    name: editor_seat
+    type: flat
+    metric: editor
+    limit: -1
+    timeFrame: monthly
+    geo: global
+    unit: 1
+    price: 20-40
+    userMultiplied: true
+  elements:
+  - name: Per-Editor Add-On (Tier-Dependent)
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

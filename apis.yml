@@ -3,7 +3,7 @@ url: https://raw.githubusercontent.com/api-evangelist/framer/refs/heads/main/api
 name: Framer
 x-type: company
 description: >-
-  Framer is a design tool and CMS for shipping production websites without code. The Framer Plugin API and CMS API expose components, content models, and project metadata for integrations.
+  Framer is a design tool and CMS for shipping production websites without code. The Framer developer surface is centred on in-editor extensibility: the Plugin API for building tools that interact with the Framer Editor and CMS, Code Components for custom React components, Code Overrides for HOC-style mutations, and Fetch for letting designers wire site content to external APIs without code. Framer does not publish a general-purpose REST API for site management at the time of reconciliation.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Productivity
@@ -14,10 +14,102 @@ tags:
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: framer:framer-plugin-api
+    name: Framer Plugin API
+    tags:
+      - Plugins
+      - Editor
+      - SDK
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.framer.com/developers/plugins
+    baseURL: https://framerusercontent.com
+    properties:
+      - url: https://www.framer.com/developers/plugins
+        type: Documentation
+      - url: https://www.npmjs.com/package/framer-plugin
+        type: SDK
+    description: >-
+      Build small in-editor apps that interact with the Framer Editor and CMS. Plugins can read and modify the canvas, manage CMS collections and items, register UI panels, and call out to external services.
+  - aid: framer:framer-code-components
+    name: Framer Code Components API
+    tags:
+      - Components
+      - React
+      - SDK
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.framer.com/developers/components
+    baseURL: local
+    properties:
+      - url: https://www.framer.com/developers/components
+        type: Documentation
+      - url: https://www.npmjs.com/package/framer
+        type: SDK
+    description: >-
+      Author custom React components with visual property controls (PropertyControls) so designers can use them on the canvas. Used to render anything from custom widgets to data-driven UI within Framer sites.
+  - aid: framer:framer-code-overrides
+    name: Framer Code Overrides API
+    tags:
+      - Overrides
+      - HOC
+      - React
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.framer.com/developers/overrides
+    baseURL: local
+    properties:
+      - url: https://www.framer.com/developers/overrides
+        type: Documentation
+    description: >-
+      Higher-order-component-style overrides that modify Layer/Component properties at runtime — used for state, animation, data binding, and behavior.
+  - aid: framer:framer-fetch
+    name: Framer Fetch
+    tags:
+      - Fetch
+      - Data
+      - No-Code
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.framer.com/developers/fetch
+    baseURL: local
+    properties:
+      - url: https://www.framer.com/developers/fetch
+        type: Documentation
+    description: >-
+      Lets developers expose external API endpoints inside Framer so designers can bind site content to them without writing code. Used for things like dynamic CMS sources, third-party data, and form submissions.
+  - aid: framer:framer-form-webhooks
+    name: Framer Form Webhooks
+    tags:
+      - Webhooks
+      - Forms
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.framer.com/help/articles/forms-and-form-submissions
+    baseURL: https://framer.com
+    properties:
+      - url: https://www.framer.com/help/articles/forms-and-form-submissions
+        type: Documentation
+    description: >-
+      Configure webhook destinations on Framer forms so each submission is POSTed to your endpoint with the form payload.
+  - aid: framer:framer-cms
+    name: Framer CMS
+    tags:
+      - CMS
+      - Content
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.framer.com/cms
+    baseURL: local
+    properties:
+      - url: https://www.framer.com/cms
+        type: Documentation
+    description: >-
+      Built-in CMS for Framer sites. Plugins access CMS collections via the Plugin API; designers consume CMS data through visual bindings and code components.
 common:
   - type: Website
     url: https://www.framer.com/
+  - type: DeveloperPortal
+    url: https://www.framer.com/developers/
+  - type: Pricing
+    url: https://www.framer.com/pricing/
+  - type: GitHub
+    url: https://github.com/framer
   - type: Plans
     url: plans/framer-plans-pricing.yml
   - type: RateLimits

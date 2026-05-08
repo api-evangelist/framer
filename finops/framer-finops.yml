@@ -5,7 +5,7 @@ provider: Framer
 providerId: framer
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Productivity
 - Design
@@ -15,11 +15,12 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for Framer. Pipeline will replace with the provider's
-  real billing-model details once researched.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: FOCUS-aligned FinOps profile for Framer. Framer prices per site (Free/Basic
+  $10 / Pro $30 / Scale $100 + usage / Enterprise custom). Additional editors are an
+  add-on at $20-$40/editor/month depending on tier. Site bandwidth and pages are
+  plan-level allowances; Scale and Enterprise add usage-based bandwidth components.
 sources:
-- https://www.framer.com/
+- https://www.framer.com/pricing/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -27,41 +28,59 @@ alignedWith:
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-publisherName: Framer
+publisherName: Framer B.V.
 serviceCategory: Productivity
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Subscription (Per Site) + Per-Editor Add-On + Usage
+  billingFrequency: Monthly or Annual
   billingCurrency: USD
   chargeCategories:
-  - Usage
   - Purchase
+  - Usage
   - Adjustment
 focusColumns:
   ServiceName: Framer
   ServiceCategory: Productivity
   ProviderName: Framer
-  PublisherName: Framer
-  InvoiceIssuerName: Framer
+  PublisherName: Framer B.V.
+  InvoiceIssuerName: Framer B.V.
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation against the provider's published metering.
-  unit: varies
+- name: site_subscription
+  description: Per-site monthly subscription (Basic $10, Pro $30, Scale $100,
+    Enterprise contract).
+  unit: site
   aggregation: sum
   dimensions:
   - account
-  - resource
+  - plan
+- name: editor_seats
+  description: Add-on per-editor monthly fee ($20-$40 depending on tier).
+  unit: seat
+  aggregation: sum
+  dimensions:
+  - account
+  - site
+- name: bandwidth
+  description: Site bandwidth usage in GB; included allowance per plan, overage on Scale
+    and Enterprise.
+  unit: gigabyte
+  aggregation: sum
+  dimensions:
+  - site
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Inventory all Framer sites under each account; tag sites to projects or
+    business owners.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Allocate site subscriptions and editor add-ons to the team owning each site.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Consolidate low-traffic sites onto Basic/Pro; downgrade Scale to Pro when
+    traffic permits; reclaim editor seats from inactive collaborators.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign one Framer account owner per organization; review quarterly site
+    inventory and bandwidth usage.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
