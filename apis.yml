@@ -116,6 +116,13 @@ common:
     url: rate-limits/framer-rate-limits.yml
   - type: FinOps
     url: finops/framer-finops.yml
+  - type: Integrations
+    url: https://www.framer.com/marketplace/
+integrations:
+  - name: Templates
+  - name: Components
+  - name: Vectors
+  - name: See All →
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
