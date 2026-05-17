@@ -1,7 +1,7 @@
 aid: framer
 url: https://raw.githubusercontent.com/api-evangelist/framer/refs/heads/main/apis.yml
 name: Framer
-x-type: company
+kind: company
 description: >-
   Framer is a design tool and CMS for shipping production websites without code. The Framer developer surface is centred on in-editor extensibility: the Plugin API for building tools that interact with the Framer Editor and CMS, Code Components for custom React components, Code Overrides for HOC-style mutations, and Fetch for letting designers wire site content to external APIs without code. Framer does not publish a general-purpose REST API for site management at the time of reconciliation.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
