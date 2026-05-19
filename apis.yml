@@ -102,6 +102,8 @@ apis:
     description: >-
       Built-in CMS for Framer sites. Plugins access CMS collections via the Plugin API; designers consume CMS data through visual bindings and code components.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/framer
   - type: Website
     url: https://www.framer.com/
   - type: DeveloperPortal
