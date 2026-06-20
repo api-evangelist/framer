@@ -4,7 +4,7 @@ name: Framer
 kind: company
 description: >-
   Framer is a design tool and CMS for shipping production websites without code. The Framer developer surface is centred on in-editor extensibility: the Plugin API for building tools that interact with the Framer Editor and CMS, Code Components for custom React components, Code Overrides for HOC-style mutations, and Fetch for letting designers wire site content to external APIs without code. Framer does not publish a general-purpose REST API for site management at the time of reconciliation.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Productivity
   - Design
@@ -21,7 +21,7 @@ apis:
       - Plugins
       - Editor
       - SDK
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.framer.com/developers/plugins
     baseURL: https://framerusercontent.com
     properties:
@@ -37,7 +37,7 @@ apis:
       - Components
       - React
       - SDK
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.framer.com/developers/components
     baseURL: local
     properties:
@@ -53,7 +53,7 @@ apis:
       - Overrides
       - HOC
       - React
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.framer.com/developers/overrides
     baseURL: local
     properties:
@@ -67,7 +67,7 @@ apis:
       - Fetch
       - Data
       - No-Code
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.framer.com/developers/fetch
     baseURL: local
     properties:
@@ -80,7 +80,7 @@ apis:
     tags:
       - Webhooks
       - Forms
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.framer.com/help/articles/forms-and-form-submissions
     baseURL: https://framer.com
     properties:
@@ -93,7 +93,7 @@ apis:
     tags:
       - CMS
       - Content
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.framer.com/cms
     baseURL: local
     properties:
