@@ -28,7 +28,7 @@ apis:
       - url: https://www.framer.com/developers/plugins
         type: Documentation
       - url: https://www.npmjs.com/package/framer-plugin
-        type: SDK
+        type: SDKs
     description: >-
       Build small in-editor apps that interact with the Framer Editor and CMS. Plugins can read and modify the canvas, manage CMS collections and items, register UI panels, and call out to external services.
   - aid: framer:framer-code-components
@@ -44,7 +44,7 @@ apis:
       - url: https://www.framer.com/developers/components
         type: Documentation
       - url: https://www.npmjs.com/package/framer
-        type: SDK
+        type: SDKs
     description: >-
       Author custom React components with visual property controls (PropertyControls) so designers can use them on the canvas. Used to render anything from custom widgets to data-driven UI within Framer sites.
   - aid: framer:framer-code-overrides
