@@ -4,7 +4,19 @@ name: Framer
 kind: company
 description: >-
   Framer is a design tool and CMS for shipping production websites without code. The Framer developer surface is centred on in-editor extensibility: the Plugin API for building tools that interact with the Framer Editor and CMS, Code Components for custom React components, Code Overrides for HOC-style mutations, and Fetch for letting designers wire site content to external APIs without code. Framer does not publish a general-purpose REST API for site management at the time of reconciliation.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Freemium
+  confidence: medium
+  source:
+    - plans
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/framer.png
 tags:
   - Productivity
   - Design
@@ -12,7 +24,7 @@ tags:
   - Web Design
   - SaaS
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-07-25'
 specificationVersion: '0.19'
 apis:
   - aid: framer:framer-plugin-api
@@ -75,32 +87,6 @@ apis:
         type: Documentation
     description: >-
       Lets developers expose external API endpoints inside Framer so designers can bind site content to them without writing code. Used for things like dynamic CMS sources, third-party data, and form submissions.
-  - aid: framer:framer-form-webhooks
-    name: Framer Form Webhooks
-    tags:
-      - Webhooks
-      - Forms
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.framer.com/help/articles/forms-and-form-submissions
-    baseURL: https://framer.com
-    properties:
-      - url: https://www.framer.com/help/articles/forms-and-form-submissions
-        type: Documentation
-    description: >-
-      Configure webhook destinations on Framer forms so each submission is POSTed to your endpoint with the form payload.
-  - aid: framer:framer-cms
-    name: Framer CMS
-    tags:
-      - CMS
-      - Content
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.framer.com/cms
-    baseURL: local
-    properties:
-      - url: https://www.framer.com/cms
-        type: Documentation
-    description: >-
-      Built-in CMS for Framer sites. Plugins access CMS collections via the Plugin API; designers consume CMS data through visual bindings and code components.
 common:
   - type: VulnerabilityDisclosure
     url: security/framer-vulnerability-disclosure.yml
@@ -124,6 +110,8 @@ common:
     url: finops/framer-finops.yml
   - type: Integrations
     url: https://www.framer.com/marketplace/
+  - type: ProductPage
+    url: https://www.framer.com/cms
 integrations:
   - name: Templates
   - name: Components
