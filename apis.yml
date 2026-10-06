@@ -41,7 +41,7 @@ tags_raw:
   - Web Design
   - SaaS
 created: '2026-05-08'
-modified: '2026-07-25'
+modified: '2026-10-06'
 specificationVersion: '0.23'
 apis:
   - aid: framer:framer-plugin-api
@@ -105,6 +105,8 @@ apis:
     description: >-
       Lets developers expose external API endpoints inside Framer so designers can bind site content to them without writing code. Used for things like dynamic CMS sources, third-party data, and form submissions.
 common:
+  - url: https://www.framer.com/stories/
+    type: Blog
   - type: VulnerabilityDisclosure
     url: security/framer-vulnerability-disclosure.yml
   - type: DomainSecurity
