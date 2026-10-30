@@ -1,4 +1,4 @@
-# Framer (framer)
+# Framer
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,56 +64,107 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Framer is a design tool and CMS for shipping production websites without code. The Framer developer surface is centred on in-editor extensibility: Plugin API, Code Components, Code Overrides, and Fetch — plus form webhooks and the built-in CMS. Framer does not publish a general-purpose REST API for site management.
+Framer is a design tool and CMS for shipping production websites without code. The Framer developer surface is centred on in-editor extensibility: the Plugin API for building tools that interact with the Framer Editor and CMS, Code Components for custom React components, Code Overrides for HOC-style mutations, and Fetch for letting designers wire site content to external APIs without code. Framer does not publish a general-purpose REST API for site management at the time of reconciliation.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/framer/refs/heads/main/apis.yml)
+**Areas:** Productivity · Design · No-Code · Web Design · Software-as-a-Service
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=framer-api-evangelist&utm_content=repo)
+## Framer on APIs.io
 
-## Type
+Everything profiled for Framer is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/framer/](https://apis.io/providers/framer/)** — or go straight to one of the APIs or properties below.
 
-- **x-type:** company
+### APIs (4)
 
-## Tags:
+- [Framer Plugin API](https://apis.io/apis/framer/framer-plugin-api/) — Build small in-editor apps that interact with the Framer Editor and CMS. Plugins can read and modify the canvas, manage CMS collections and items, register…
+- [Framer Code Components API](https://apis.io/apis/framer/framer-code-components/) — Author custom React components with visual property controls (PropertyControls) so designers can use them on the canvas. Used to render anything from custom…
+- [Framer Code Overrides API](https://apis.io/apis/framer/framer-code-overrides/) — Higher-order-component-style overrides that modify Layer/Component properties at runtime — used for state, animation, data binding, and behavior.
+- [Framer Fetch](https://apis.io/apis/framer/framer-fetch/) — Lets developers expose external API endpoints inside Framer so designers can bind site content to them without writing code. Used for things like dynamic…
 
- - Productivity, Design, No-Code, Web Design, SaaS
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+#### Security (2)
 
-## APIs
+Authentication, trust centre, and vulnerability disclosure.
 
-| API | Description |
-|---|---|
-| Framer Plugin API | Build in-editor apps that interact with the Framer Editor and CMS. |
-| Framer Code Components API | Custom React components with PropertyControls for the canvas. |
-| Framer Code Overrides API | HOC-style runtime overrides on layers/components. |
-| Framer Fetch | Wire designer-facing site content to external API endpoints without code. |
-| Framer Form Webhooks | POST form submissions to a developer-defined endpoint. |
-| Framer CMS | Built-in CMS for Framer sites; accessed via Plugin API and visual bindings. |
+- [Framer Domain Security](https://apis.io/security/framer/framer-domain-security/)
+- [Framer Vulnerability Disclosure](https://apis.io/security/framer/framer-vulnerability-disclosure/)
 
-## Common Properties
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Framer Plans Pricing](https://apis.io/plans/framer/framer-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Framer Rate Limits](https://apis.io/rate-limits/framer/framer-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Framer Finops](https://apis.io/finops/framer/framer-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://www.framer.com/)
-- [Developer Portal](https://www.framer.com/developers/)
 - [Pricing](https://www.framer.com/pricing/)
-- [GitHub](https://github.com/framer)
-- [Plans](plans/framer-plans-pricing.yml) — API Commons Plans 0.1
-- [RateLimits](rate-limits/framer-rate-limits.yml) — API Commons Rate Limits 0.1
-- [FinOps](finops/framer-finops.yml) — FOCUS-aligned FinOps Framework 1.0
+- [Blog](https://www.framer.com/stories/)
 
-## Artifacts
+## API Evangelist rating
 
-| Artifact | Path | Notes |
-|---|---|---|
-| Plans | `plans/framer-plans-pricing.yml` | Free / Basic $10 / Pro $30 / Scale $100 / Enterprise + Editors $20-$40 |
-| Rate Limits | `rate-limits/framer-rate-limits.yml` | Plan-level quotas (CMS, pages, bandwidth); no public REST rate ceiling |
-| FinOps | `finops/framer-finops.yml` | Per-site subscription + per-editor add-on + bandwidth |
+**Kin Score 17.8** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-## Maintainers
+| Facet | Score |
+|---|---|
+| Discoverability | 71.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 28.6 |
+| Access clarity | 18.4 |
 
-**FN:** Kin Lane
+**Agent readiness 0.6** — human-only
 
-**Email:** kin@apievangelist.com
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 11.8** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/framer/](https://apis.io/providers/framer/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Framer: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/framer/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
